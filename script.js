@@ -93,7 +93,7 @@ function setDateTime()
   let date = dateObject.getDate() < 10 ? "0"+ dateObject.getDate() : dateObject.getDate();
   let month = dateObject.getMonth()+1 < 10 ? "0"+(dateObject.getMonth()+1) : (dateObject.getMonth()+1) ;
   let year = dateObject.getFullYear();
-  let hour = dateObject.getHours() < 10 ? "0"+dateObject.getHours() : dateObject.getHours();
+  let hour = (dateObject.getHours() % 12) < 10 ? "0"+(dateObject.getHours() % 12) : dateObject.getHours();
   let minute = dateObject.getMinutes() < 10 ? "0"+dateObject.getMinutes() : dateObject.getMinutes();
   let second = dateObject.getSeconds() < 10 ? "0"+dateObject.getSeconds() : dateObject.getSeconds();
   document.getElementById('dmy').textContent = `${date}/${month}/${year}`;
