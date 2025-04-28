@@ -17,7 +17,7 @@ window.onload = function()
   
   
   setInterval(setDateTime,1000);
-  
+
   input.addEventListener('change', function(){
     name = this.value;
     if(name == '') return;
