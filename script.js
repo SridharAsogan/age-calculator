@@ -74,6 +74,17 @@ window.onload = function()
     const ageYear = now.getFullYear() - dob.getFullYear();
     const ageMonth = now.getMonth() - dob.getMonth();
     const ageDate = now.getDate() - dob.getDate();
+
+    if(ageDate < 0){
+      ageMonth--;
+      ageDate += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+    }
+    
+    if(ageMonth < 0){
+      ageYear--;
+      ageMonth += 12;
+    }
+    
     res.textContent = `Hi ${name}! Your age is ${ageYear} years ${ageMonth} months  and ${ageDate} days`;
     
     input.value = "";
