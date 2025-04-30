@@ -66,26 +66,24 @@ window.onload = function()
       alert('Fill name field');
       return;
     }
-/*    if(date === '--SELECT--'){
-      alert('Select valid date');
-    }*/
-    alert("Begin");
+    
     const dob = new Date(year,month,date);
     const now = new Date();
     const ageYear = now.getFullYear() - dob.getFullYear();
     const ageMonth = now.getMonth() - dob.getMonth();
     const ageDate = now.getDate() - dob.getDate();
 
+    alert("Begin");
     if(ageDate < 0){
       ageMonth--;
       ageDate += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
     }
-    
+    alert("Date");
     if(ageMonth < 0){
       ageYear--;
       ageMonth += 12;
     }
-    
+    alert("Month");
     res.textContent = `Hi ${name}! Your age is ${ageYear} years ${ageMonth} months  and ${ageDate} days`;
     
     input.value = "";
