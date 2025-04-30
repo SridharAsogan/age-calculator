@@ -69,6 +69,7 @@ window.onload = function()
 /*    if(date === '--SELECT--'){
       alert('Select valid date');
     }*/
+    alert("Begin");
     const dob = new Date(year,month,date);
     const now = new Date();
     const ageYear = now.getFullYear() - dob.getFullYear();
@@ -94,6 +95,7 @@ window.onload = function()
     
     reset();
     calc.disabled = true;
+    alert("Finish");
   });
   
 };
