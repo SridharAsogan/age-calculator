@@ -62,6 +62,7 @@ window.onload = function()
   });
   
   calc.addEventListener('click', function(){
+    try{
     if(name === ''){
       alert('Fill name field');
       return;
@@ -73,17 +74,17 @@ window.onload = function()
     const ageMonth = now.getMonth() - dob.getMonth();
     const ageDate = now.getDate() - dob.getDate();
 
-    alert("Begin");
+    
     if(ageDate < 0){
       ageMonth--;
       ageDate += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
     }
-    alert("Date");
+    
     if(ageMonth < 0){
       ageYear--;
       ageMonth += 12;
     }
-    alert("Month");
+    
     res.textContent = `Hi ${name}! Your age is ${ageYear} years ${ageMonth} months  and ${ageDate} days`;
     
     input.value = "";
@@ -93,7 +94,9 @@ window.onload = function()
     
     reset();
     calc.disabled = true;
-    alert("Finish");
+    }catch(e){
+      alert(e.message);
+    }
   });
   
 };
