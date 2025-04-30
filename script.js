@@ -62,7 +62,6 @@ window.onload = function()
   });
   
   calc.addEventListener('click', function(){
-    try{
     if(name === ''){
       alert('Fill name field');
       return;
@@ -70,9 +69,9 @@ window.onload = function()
     
     const dob = new Date(year,month,date);
     const now = new Date();
-    const ageYear = now.getFullYear() - dob.getFullYear();
-    const ageMonth = now.getMonth() - dob.getMonth();
-    const ageDate = now.getDate() - dob.getDate();
+    let ageYear = now.getFullYear() - dob.getFullYear();
+    let ageMonth = now.getMonth() - dob.getMonth();
+    let ageDate = now.getDate() - dob.getDate();
 
     
     if(ageDate < 0){
@@ -94,9 +93,6 @@ window.onload = function()
     
     reset();
     calc.disabled = true;
-    }catch(e){
-      alert(e.message);
-    }
   });
   
 };
